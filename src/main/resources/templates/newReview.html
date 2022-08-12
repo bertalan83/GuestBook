@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create new review</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<div class="header">
+    <div class="header-right">
+        <a href="/new-review">Create a new review</a>
+        <a href="/all-reviews">All reviews</a>
+        <a href="/search">Search</a>
+    </div>
+    <div class="header-left">
+        <a href="/home">Home</a>
+    </div>
+</div>
+
+<h1 id="header">Create a new review</h1>
+
+<br/>
+
+
+<form id="form" data-th-action="@{/new-review}" method="post" data-th-object="${review}">
+    <span>First Name:</span>
+    <input type="text" size="40" data-th-field="*{firstName}" placeholder="First Name" />
+    <br />
+    <br />
+    <span>Last Name:</span>
+    <input type="text" size="40" data-th-field="*{lastName}" placeholder="Last Name" />
+    <br />
+    <br />
+    <span>Your review:</span>
+    <textarea rows="5" cols="50" data-th-field="*{comment}" placeholder="Write your review here"></textarea>
+    <br />
+    <br />
+    <input type="submit" value="Submit">
+</form>
+
+<br/>
+
+<table data-th-if="${newReview} != null">
+    <tr style="font-size: larger">
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Review</th>
+        <th>Date</th>
+    </tr>
+    </br>
+    </br>
+    <tr>
+        <td data-th-text="${newReview.firstName}"></td>
+        <td data-th-text="${newReview.lastName}"></td>
+        <td data-th-text="${newReview.comment}"></td>
+        <td data-th-text="${newReview.date}"></td>
+
+    </tr>
+</table>
+
+</body>
+
+</html>

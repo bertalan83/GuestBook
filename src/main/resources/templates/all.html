@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All reviews</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<div class="header">
+    <div class="header-right">
+        <a href="/new-review">Create a new review</a>
+        <a href="/all-reviews">All reviews</a>
+        <a href="/search">Search</a>
+    </div>
+    <div class="header-left">
+        <a href="/home">Home</a>
+    </div>
+</div>
+
+<h1 id="header">All reviews</h1>
+
+<table>
+    <tr style="font-size: larger">
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Review</th>
+        <th>Date</th>
+    </tr>
+    </br>
+    </br>
+    <tr data-th-each="random: ${randoms}">
+        <td data-th-text="${random.firstName}"></td>
+        <td data-th-text="${random.lastName}"></td>
+        <td data-th-text="${random.comment}"></td>
+        <td data-th-text="${random.date}"></td>
+
+    </tr>
+</table>
+
+</body>
+
+</html>
